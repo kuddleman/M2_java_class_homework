@@ -17,7 +17,7 @@ Use of enum: ClassB
 public class AccountsTester {
     public static void main(String[] args) {
        Account a1 = new CheckingAccount("owner1", 45566, 5000, TaxStatus.WITHOLDING_REQUIRED);
-       Account a2 = new MoneyMarketAccount("owner1", "owner2", 45567, 10000);
+       Account a2 = new MoneyMarketAccount("owner1", "owner2", 45567, 7600,TaxStatus.NO_WITHHOLDING_REQUIRED);
         //System.out.println(a1.toString());
        // System.out.println(a2.toString());
         //System.out.println(a1.equals(a2));
@@ -28,18 +28,18 @@ public class AccountsTester {
 //        myChecking.withdraw(50);
 //        myChecking.deposit(100);
 
-        Account savings1 = new SavingsAccount("owner6", 45570, 200);
-        Account savings2 = new SavingsAccount("owner7", "owner8", 45570, 400);
+        Account savings1 = new SavingsAccount("owner6", 45570, 200, TaxStatus.WITHOLDING_REQUIRED);
+        Account savings2 = new SavingsAccount("owner7", "owner8", 56789,45570, TaxStatus.FED_TAX_FREE);
 
         SavingsAccount mySavings = (SavingsAccount) savings2;
         mySavings.withdraw(50);
         mySavings.deposit(100);
 
-        Account moneyMarket1 = new MoneyMarketAccount("owner8", 45571, 50000);
-        Account moneyMarket2 = new MoneyMarketAccount("owner9", "owner10", 45572, 30000);
+        Account moneyMarket1 = new MoneyMarketAccount("owner8", 45571, 50000, TaxStatus.WITHOLDING_REQUIRED);
+        Account moneyMarket2 = new MoneyMarketAccount("owner9", "owner10", 45572, 30000, TaxStatus.FED_TAX_FREE);
 
-        Account cd1 = new CertificateOfDeposit("owner10", 45572, 40000, "July 19, 2022");
-        Account cd2 = new CertificateOfDeposit("owner11", "owner12", 45573, 500000, "December 25, 2025");
+        Account cd1 = new CertificateOfDeposit("owner10", 45572, 40000, "July 19, 2022", TaxStatus.CA_AND_FED_TAX_FREE);
+        Account cd2 = new CertificateOfDeposit("owner11", "owner12", 45573, 500000, "December 25, 2025", TaxStatus.WITHOLDING_REQUIRED);
 
         CertificateOfDeposit myCert = (CertificateOfDeposit) cd1;
         myCert.extendTermOfCd("January 1, 2030");
