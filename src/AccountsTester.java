@@ -1,14 +1,28 @@
 import java.util.ArrayList;
 
+/*
+Remove any package statements from all files so that no classes are in a named package.
+To do this, remove "package mypackage;" from the top of all files.
+Zip together your .java files.
+Be sure to zip the .java file, not the .class file.
+Upload the zip file.
+In the comment box on Canvas, list the names of the files that contain each requirement. For example:
+static variable and method: Account, CertificateOfDeposit, DemandDeposit
+Comparable: ClassB
+Driver program: AccountsTester
+enum: TaxStatus
+Use of enum: ClassB
+ */
+
 public class AccountsTester {
     public static void main(String[] args) {
-       Account a1 = new CheckingAccount("owner1", 45566, 5000);
+       Account a1 = new CheckingAccount("owner1", 45566, 5000, TaxStatus.WITHOLDING_REQUIRED);
        Account a2 = new MoneyMarketAccount("owner1", "owner2", 45567, 10000);
         //System.out.println(a1.toString());
        // System.out.println(a2.toString());
         //System.out.println(a1.equals(a2));
-        Account checking1 = new CheckingAccount("owner4", 45568, 50);
-        Account checking2 = new CheckingAccount("owner5", 45569, 100);
+        Account checking1 = new CheckingAccount("owner4", 45568, 50, TaxStatus.CA_STATE_TAX_FREE);
+        Account checking2 = new CheckingAccount("owner5", 45569, 100, TaxStatus.FED_TAX_FREE);
 
         CheckingAccount myChecking = (CheckingAccount) checking1;
 //        myChecking.withdraw(50);

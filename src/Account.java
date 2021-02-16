@@ -4,16 +4,22 @@ public abstract class Account {
     private int accountNumber;
     private int initialDeposit;
 
+    private TaxStatus taxStatus;
+
+    private static int totalDepositsInAllAccounts = 0;
+
     // constructor for single owner account
-    public Account(String firstName, int anAccountNumber, int anInitialDeposit) {
+    public Account(String firstName, int anAccountNumber, int anInitialDeposit, TaxStatus aTaxStatus) {
         this.name1 = firstName;
         this.accountNumber = anAccountNumber;
         this.initialDeposit = anInitialDeposit;
+        this.taxStatus = aTaxStatus;
+        Account.totalDepositsInAllAccounts += anInitialDeposit;
     }
 
     // constructor for joint-owner account
-    public Account(String firstName, String secondName, int anAccountNumber, int anInitialDeposit) {
-        this(firstName, anAccountNumber, anInitialDeposit);
+    public Account(String firstName, String secondName, int anAccountNumber, int anInitialDeposit, TaxStatus aTaxStatus) {
+        this(firstName, anAccountNumber, anInitialDeposit, aTaxStatus);
         this.name2 = secondName;
 
     }
@@ -33,6 +39,18 @@ public abstract class Account {
 
     public int getInitialDeposit() {
         return initialDeposit;
+    }
+
+    public static int getTotalDepositsInAllAccounts() {
+        return Account.totalDepositsInAllAccounts;
+    }
+
+    public static int decreaseTotalDepositsInAllAccounts(int withdrawl) {
+        return Account.totalDepositsInAllAccounts -= withdrawl;
+    }
+
+    public static int increaseTotalDepositsInAllAccounts(int deposit) {
+        return Account.totalDepositsInAllAccounts += deposit;
     }
 
     @Override

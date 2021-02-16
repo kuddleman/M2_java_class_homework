@@ -12,6 +12,7 @@ public class CertificateOfDeposit extends Account {
     public CertificateOfDeposit (String firstName, String secondName, int anAccountNumber, int anInitialDeposit, String anEndDate) {
         super(firstName,secondName,anAccountNumber,anInitialDeposit);
         this.endDate = anEndDate;
+        Account.increaseTotalDepositsInAllAccounts(anInitialDeposit);
     }
 
     public String getEndDate() {
