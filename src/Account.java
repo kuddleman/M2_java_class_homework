@@ -1,4 +1,4 @@
-public abstract class Account {
+public abstract class Account implements Comparable<Account> {
     private String name1;
     private String name2;
     private int accountNumber;
@@ -78,6 +78,19 @@ public abstract class Account {
             return false;
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Account act) {
+//        if(initialDeposit < act.initialDeposit) {
+//            return -10;
+//        } else if (initialDeposit > act.initialDeposit) {
+//            return 10;
+//        } else {
+//            return 0;
+//        }
+
+        return Integer.compare(initialDeposit, act.initialDeposit);
     }
 
 
