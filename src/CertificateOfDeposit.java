@@ -12,6 +12,8 @@ public class CertificateOfDeposit extends Account {
     public CertificateOfDeposit (String firstName, String secondName, int anAccountNumber, int anInitialDeposit, String anEndDate, TaxStatus aTaxStatus) {
         super(firstName,secondName,anAccountNumber,anInitialDeposit, aTaxStatus);
         this.endDate = anEndDate;
+
+        //M2 HOMEWORK STATIC
         Account.increaseTotalDepositsInAllAccounts(anInitialDeposit);
     }
 
@@ -24,7 +26,7 @@ public class CertificateOfDeposit extends Account {
 
 
         String s = super.toString();
-        return s += "\nInitial Deposit: $" + getInitialDeposit() + "\nEnd Date: " + getEndDate() ;
+        return s += "\nEnd Date: " + getEndDate() ;
 
     }
 

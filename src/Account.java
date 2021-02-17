@@ -1,3 +1,4 @@
+// M2 HOMEWORK ENUM USE
 public abstract class Account implements Comparable<Account> {
     private String name1;
     private String name2;
@@ -14,6 +15,8 @@ public abstract class Account implements Comparable<Account> {
         this.accountNumber = anAccountNumber;
         this.initialDeposit = anInitialDeposit;
         this.taxStatus = aTaxStatus;
+
+        // M2 HOMEWORK STATIC
         Account.totalDepositsInAllAccounts += anInitialDeposit;
     }
 
@@ -41,6 +44,7 @@ public abstract class Account implements Comparable<Account> {
         return initialDeposit;
     }
 
+    // M2 HOMEWORK STATIC
     public static int getTotalDepositsInAllAccounts() {
         return Account.totalDepositsInAllAccounts;
     }
@@ -61,8 +65,8 @@ public abstract class Account implements Comparable<Account> {
         }
         return "Account owners: " + name1 + " and " + name2 + "\nAccount Number: #" + accountNumber + "\nInitial Deposit: $" + initialDeposit ;
         */
-        return "Account owner(s): " + name1 + " and " + (name2 == null? "": getName2()) +
-                "\nAccount Number: #" + accountNumber + "\nInitial Deposit: $";
+        return "Account owner(s): " + name1 + (name2 == null? "": " and " + getName2()) +
+                "\nAccount Number: #" + accountNumber + "\nInitial Deposit: $" + initialDeposit;
     }
 
     @Override

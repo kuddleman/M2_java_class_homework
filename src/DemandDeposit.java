@@ -15,12 +15,16 @@ public abstract class DemandDeposit extends Account {
 
     public void withdraw(int amount){
         System.out.println("$" + amount + " has been withdrawn from your account.");
+
+        // M2 HOMEWORK STATIC
         Account.increaseTotalDepositsInAllAccounts(amount);
 
     }
 
     public void deposit(int amount) {
         System.out.println("$" + amount + " has been deposited your account.");
+
+        // M2 HOMEWORK STATIC
         Account.increaseTotalDepositsInAllAccounts(amount);
     }
 

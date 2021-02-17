@@ -1,3 +1,4 @@
+// M2 HOMEWORK ENUM
 public enum TaxStatus {
     NO_WITHHOLDING_REQUIRED(false, true,
             true, true, "We are not required to withhold taxes on your account."),
@@ -52,19 +53,19 @@ public enum TaxStatus {
     }
 
     @Override
-    public String toString() {
-        if(caAndFedTaxFree) {
-            return displayTaxStatus;
-        } else if (fedTaxFree) {
-            return displayTaxStatus;
-        } else if (caStateTaxFree) {
-            return displayTaxStatus;
-        } else if (witholdingRequired) {
-            return displayTaxStatus;
-        } else {
-            return "We are not required to withhold taxes on your account.";
-        }
-
+   public String toString() {
+//        if(caAndFedTaxFree) {
+//            return displayTaxStatus;
+//        } else if (fedTaxFree) {
+//            return displayTaxStatus;
+//        } else if (caStateTaxFree) {
+//            return displayTaxStatus;
+//        } else if (witholdingRequired) {
+//            return displayTaxStatus;
+//        } else {
+//            return "We are not required to withhold taxes on your account.";
+//        }
+          return displayTaxStatus;
 
     }
 

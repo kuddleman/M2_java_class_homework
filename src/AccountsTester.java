@@ -8,10 +8,10 @@ Be sure to zip the .java file, not the .class file.
 Upload the zip file.
 In the comment box on Canvas, list the names of the files that contain each requirement. For example:
 static variable and method: Account, CertificateOfDeposit, DemandDeposit
-Comparable: ClassB
+Comparable: Account
 Driver program: AccountsTester
 enum: TaxStatus
-Use of enum: ClassB
+Use of enum: Account
  */
 
 public class AccountsTester {
