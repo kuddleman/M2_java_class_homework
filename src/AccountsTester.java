@@ -1,19 +1,5 @@
 import java.util.ArrayList;
 
-/*
-Remove any package statements from all files so that no classes are in a named package.
-To do this, remove "package mypackage;" from the top of all files.
-Zip together your .java files.
-Be sure to zip the .java file, not the .class file.
-Upload the zip file.
-In the comment box on Canvas, list the names of the files that contain each requirement. For example:
-static variable and method: Account, CertificateOfDeposit, DemandDeposit
-Comparable: Account
-Driver program: AccountsTester
-enum: TaxStatus
-Use of enum: Account
- */
-
 public class AccountsTester {
     public static void main(String[] args) {
        Account a1 = new CheckingAccount("owner1", 45566, 5000, TaxStatus.WITHOLDING_REQUIRED);
